@@ -1,0 +1,18 @@
+								Ten Tree
+------------------------------------------------------------------------------------------------------------------------------------------
+
+
+	Structura de date de fata incearca sa rezolve o problema clasica cat mai eficient si anume: sortarea unui vector avand duplicate.
+	Tin de la inceput sa precizez ca relatia de ordine poate fi data sub forma unei functii f : A -> B, unde f(x) = y, f functie injectiva.
+Se va folosi un unordered_map pentru a cauta eficient reverse-ul transformarii.
+
+	Ideea din spate a structurii: numerele inserate se iau cifra cu cifra si se creeaza un arbore in care fiecare nod are maxim 10 copii.
+Spre exemplu, numarul 1234 se va retine astfel: root->children[1]->children[2]->children[3]->children[4]->positives / negatives, in functie de
+semnul numarului. Structura tine si evidenta duplicatelor, in variabilele postives / negatives, avem stocat de cate ori apare numarul respectiv.
+	Sortarea ruleaza in O(N * K), unde K este lungimea maxima a unui numar, insa in realitate ruleaza mult mai rapid de atat.
+	Operatiile de insert si count ruleaza in O(K), unde K este lungimea numarului cautat.
+	*Se poate observa ca structura concureaza foarte bine cu sort-ul din stl cand in vector nu sunt duplicate, insa cand vectorul are duplicate
+merge mai rapid.
+
+
+	
